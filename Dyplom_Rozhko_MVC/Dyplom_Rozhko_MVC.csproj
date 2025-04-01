@@ -1177,8 +1177,7 @@
       <DependentUpon>Textile.edmx</DependentUpon>
     </Content>
     <Content Include="Views\User\Product.cshtml" />
-    <Content Include="Views\Account\LoginPage.cshtml" />
-    <Content Include="Views\Account\RegisterPage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
