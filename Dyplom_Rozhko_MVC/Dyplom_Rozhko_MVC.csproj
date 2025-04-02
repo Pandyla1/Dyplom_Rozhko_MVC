@@ -782,8 +782,10 @@
     </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ConnectAllTables.cs" />
+    <Compile Include="Models\EmailValidation.cs" />
     <Compile Include="Models\FileUpload.cs" />
     <Compile Include="Models\ImgExtentionValidation.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Orders.cs">
       <DependentUpon>Textile.tt</DependentUpon>
     </Compile>

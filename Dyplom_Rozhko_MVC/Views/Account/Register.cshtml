@@ -7,7 +7,7 @@
 <body>
     <div style="display: grid; place-items: center; height: auto; ">
         <div style="width: 700px; margin-left: 100px;">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
 
@@ -15,38 +15,33 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     <div class="form-group">
-                        @Html.Label("Ім'я", new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input type="text" name="RealNameUser" class="form-control" placeholder="Введіть ім'я"/>
-                        </div>
+                        @Html.LabelFor(model => model.RegisterViewModel.RealNameUser, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.RegisterViewModel.RealNameUser, new { @class = "form-control", placeholder = "Введіть пошту" })
+                        @Html.ValidationMessageFor(model => model.RegisterViewModel.RealNameUser, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
-                        @Html.Label("Нікнейм", new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input type="text" name="NameUser" class="form-control" placeholder="Введіть нікнейм"/>
-                        </div>
+                        @Html.LabelFor(model => model.RegisterViewModel.NameUser, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.RegisterViewModel.NameUser, new { @class = "form-control", placeholder = "Введіть пошту" })
+                        @Html.ValidationMessageFor(model => model.RegisterViewModel.NameUser, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
-                        @Html.Label("Телефон", new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input type="text" name="PhoneNumber" class="form-control" placeholder="Введіть номер телефону"/>
-                        </div>
+                        @Html.LabelFor(model => model.RegisterViewModel.PhoneNumber, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.RegisterViewModel.PhoneNumber, new { @class = "form-control", placeholder = "Введіть пошту" })
+                        @Html.ValidationMessageFor(model => model.RegisterViewModel.PhoneNumber, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
-                        @Html.Label("Пошта", new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input type="text" name="Email" class="form-control" placeholder="Введіть пошту"/>
-                        </div>
+                        @Html.LabelFor(model => model.RegisterViewModel.Email, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.RegisterViewModel.Email, new { @class = "form-control", placeholder = "Введіть пошту" })
+                        @Html.ValidationMessageFor(model => model.RegisterViewModel.Email, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
-                        @Html.Label("Пароль", new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input type="text" name="Password" class="form-control" placeholder="Введіть пароль"/>
-                        </div>
+                        @Html.LabelFor(model => model.RegisterViewModel.Password, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.RegisterViewModel.Password, new { @class = "form-control", placeholder = "Введіть пошту" })
+                        @Html.ValidationMessageFor(model => model.RegisterViewModel.Password, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">

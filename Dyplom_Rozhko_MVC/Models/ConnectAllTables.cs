@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dyplom_Rozhko_MVC.Models
 {
@@ -18,5 +19,7 @@ namespace Dyplom_Rozhko_MVC.Models
         public IEnumerable<Dyplom_Rozhko_MVC.SubCategory> SubCategory { get; set; }
         public IEnumerable<Dyplom_Rozhko_MVC.Users> Users { get; set; }
         public IEnumerable<Dyplom_Rozhko_MVC.Wishlist> Wishlist { get; set; }
+
+        public RegisterViewModel RegisterViewModel { get; set; }
     }
 }

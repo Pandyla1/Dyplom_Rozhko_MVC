@@ -86,8 +86,8 @@
                             @Html.ActionLink("Контакти", "Contact", "User", new { area = "" }, new { @class = "nav-item nav-link" })
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Login</a>
-                            <a href="" class="nav-item nav-link">Register</a>
+                            <a href="@Url.Action("Login", "Account")" class="nav-item nav-link">Login</a>
+                            <a href="@Url.Action("Register", "Account")" class="nav-item nav-link">Register</a>
                         </div>
                     </div>
                 </nav>

@@ -17,30 +17,47 @@ namespace Dyplom_Rozhko_MVC.Controllers
         [HttpGet]
         public ActionResult Register()
         {
-            DyplomEntities db = new DyplomEntities();
             var viewModel = new ConnectAllTables
             {
-                Category = db.Category.ToList(),
-                Users = db.Users.ToList()
+                Category = new DyplomEntities().Category.ToList() ?? new List<Category>(),
+                Users = new DyplomEntities().Users.ToList(),
+                RegisterViewModel = new RegisterViewModel()
             };
             return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Register(Users users, string NameUser, string RealNameUser, string PhoneNumber, string Email, string Password)
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(ConnectAllTables model)
         {
-            DyplomEntities db = new DyplomEntities();
+            if (!ModelState.IsValid)
+            {
+                using (DyplomEntities db = new DyplomEntities())
+                {
+                    // Оновлюємо категорії при поверненні на сторінку
+                    model.Category = db.Category.ToList();
+                }
 
-            users.Name = RealNameUser;
-            users.UserName = NameUser;
-            users.Phone= PhoneNumber;
-            users.Email = Email;
-            users.Password = Password;
-            users.RoleId = 1;
-            users.CreatedDate = DateTime.Now;
-            
-            db.Users.Add(users);
-            db.SaveChanges();
+                return View(model);
+            }
+
+            using (DyplomEntities db = new DyplomEntities())
+            {
+                Users users = new Users
+                {
+                    Name = model.RegisterViewModel.RealNameUser,
+                    UserName = model.RegisterViewModel.NameUser,
+                    Phone = model.RegisterViewModel.PhoneNumber,
+                    Email = model.RegisterViewModel.Email,
+                    Password = model.RegisterViewModel.Password,
+                    RoleId = 1,
+                    CreatedDate = DateTime.Now
+                };
+
+                db.Users.Add(users);
+                db.SaveChanges();
+            }
+
             return RedirectToAction("Index", "User");
         }
     }
