@@ -15,24 +15,6 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.RegisterViewModel.RealNameUser, new { @class = "control-label" })
-                        @Html.TextBoxFor(model => model.RegisterViewModel.RealNameUser, new { @class = "form-control", placeholder = "Введіть пошту" })
-                        @Html.ValidationMessageFor(model => model.RegisterViewModel.RealNameUser, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.RegisterViewModel.NameUser, new { @class = "control-label" })
-                        @Html.TextBoxFor(model => model.RegisterViewModel.NameUser, new { @class = "form-control", placeholder = "Введіть пошту" })
-                        @Html.ValidationMessageFor(model => model.RegisterViewModel.NameUser, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.RegisterViewModel.PhoneNumber, new { @class = "control-label" })
-                        @Html.TextBoxFor(model => model.RegisterViewModel.PhoneNumber, new { @class = "form-control", placeholder = "Введіть пошту" })
-                        @Html.ValidationMessageFor(model => model.RegisterViewModel.PhoneNumber, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="form-group">
                         @Html.LabelFor(model => model.RegisterViewModel.Email, new { @class = "control-label" })
                         @Html.TextBoxFor(model => model.RegisterViewModel.Email, new { @class = "form-control", placeholder = "Введіть пошту" })
                         @Html.ValidationMessageFor(model => model.RegisterViewModel.Email, "", new { @class = "text-danger" })
@@ -46,7 +28,7 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10" style="display: grid; place-items: center;">
-                            <input type="submit" value="Створити акаунт" class="btn btn-default" />
+                            <input type="submit" value="Ввійти" class="btn btn-default" />
                         </div>
                     </div>
                 </div>

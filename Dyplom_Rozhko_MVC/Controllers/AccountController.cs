@@ -60,5 +60,17 @@ namespace Dyplom_Rozhko_MVC.Controllers
 
             return RedirectToAction("Index", "User");
         }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            var viewModel = new ConnectAllTables
+            {
+                Category = new DyplomEntities().Category.ToList() ?? new List<Category>(),
+                Users = new DyplomEntities().Users.ToList(),
+                RegisterViewModel = new RegisterViewModel()
+            };
+            return View(viewModel);
+        }
     }
 }
