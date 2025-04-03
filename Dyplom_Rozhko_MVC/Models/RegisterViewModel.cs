@@ -20,6 +20,8 @@ namespace Dyplom_Rozhko_MVC.Models
         public string RealNameUser { get; set; }
 
         [Required(ErrorMessage = "Введіть номер телефону")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Введіть правильний номер")]
         public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Введіть пароль")]
