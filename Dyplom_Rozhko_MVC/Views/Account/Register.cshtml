@@ -42,6 +42,7 @@
                         @Html.LabelFor(model => model.RegisterViewModel.Password, new { @class = "control-label" })
                         @Html.TextBoxFor(model => model.RegisterViewModel.Password, new { @class = "form-control", placeholder = "Введіть пошту" })
                         @Html.ValidationMessageFor(model => model.RegisterViewModel.Password, "", new { @class = "text-danger" })
+                        <p style="padding-top: 10px;">- мінімум 8 символів;<br>- великі і маленькі букви;<br>- мінімум 1 число;<br>- мінімум 1 спеціальний символ.</p>
                     </div>
 
                     <div class="form-group">

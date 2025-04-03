@@ -26,6 +26,7 @@ namespace Dyplom_Rozhko_MVC.Models
 
         [Required(ErrorMessage = "Введіть пароль")]
         [DataType(DataType.Password)]
+        [RegularExpression(@"^(?=.*[!@#$%^&*(),.?"":{}|<>])(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d!@#$%^&*(),.?"":{}|<>]{8,}$", ErrorMessage = "Введіть правильний пароль")]
         public string Password { get; set; }
     }
 }
